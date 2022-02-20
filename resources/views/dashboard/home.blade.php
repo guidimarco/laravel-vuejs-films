@@ -39,10 +39,26 @@
                     </div>
                     <div>
                         <div id="filmSearched" v-bind:class="{'d-none': !filmFound}">
-                            <ul>
-                                <li>Title: @{{ searchedFilm.Title }} (@{{ searchedFilm.Year }})</li>
-                                <li>Director: @{{ searchedFilm.Director }}</li>
-                            </ul>
+                            <form id="saveFilm" action="{{ route('dashboard.film.store') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+
+                                <div class="form-group w-50 d-inline-block">
+                                    <label>Titolo</label>
+                                    <input type="text" name="title" class="form-control" v-model="searchedFilm.Title" required readonly>
+                                    <label>Anno di realizzazione</label>
+                                    <input type="text" name="year" class="form-control" v-model="searchedFilm.Year" required readonly>
+                                    <label>Regista</label>
+                                    <input type="text" name="director" class="form-control" v-model="searchedFilm.Director" required readonly>
+                                </div>
+
+                                <div class="mt-2">
+                                    <div class="d-inline-block form-group">
+                                        <button type="submit" class="btn btn-outline-secondary">
+                                            Salva
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         <p id="filmNotFound" v-bind:class="{'d-none': !filmNotFound}">@{{ errorMessage }}</p>
                     </div>

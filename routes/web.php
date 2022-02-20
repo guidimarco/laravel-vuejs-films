@@ -19,4 +19,5 @@ Route::get('/', 'HomeController@index')->name('welcome');
 
 Route::namespace('Dashboard')->name('dashboard.')->middleware('auth')->group(function() {
     Route::get('/dashboard', 'HomeController@index')->name('home');
+    Route::post('/dashboard', 'HomeController@store')->name('film.store');
 });

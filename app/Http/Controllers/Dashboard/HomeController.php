@@ -11,4 +11,15 @@ class HomeController extends Controller
     {
         return view('dashboard.home');
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        return redirect()->route('dashboard.home');
+    }
 }
