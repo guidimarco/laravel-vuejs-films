@@ -32,7 +32,7 @@
 
                     <h2>Cerca il film che vuoi guardare stasera</h2>
                     <div class="input-group mb-3 form-group">
-                        <input id="filmTitle" type="text" class="form-control input-group-prepend" placeholder="Inserisci il titolo" required>
+                        <input v-model="filmTitle" id="filmTitle" type="text" class="form-control input-group-prepend" placeholder="Inserisci il titolo" required>
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" @click="searchFilms">Cerca</button>
                         </div>

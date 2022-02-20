@@ -2473,11 +2473,18 @@ __webpack_require__.r(__webpack_exports__);
 var app = new Vue({
   el: '#app',
   data: {
+    getFilmUrl: 'http://127.0.0.1:8000/api/getFilm',
     filmTitle: ''
   },
   methods: {
     searchFilms: function searchFilms() {
-      console.log("Test");
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.getFilmUrl, {
+        params: {
+          title: this.filmTitle
+        }
+      }).then(function (data) {
+        console.log(data.data);
+      });
     }
   },
   mounted: function mounted() {}
