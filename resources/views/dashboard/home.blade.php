@@ -32,10 +32,19 @@
 
                     <h2>Cerca il film che vuoi guardare stasera</h2>
                     <div class="input-group mb-3 form-group">
-                        <input v-model="filmTitle" id="filmTitle" type="text" class="form-control input-group-prepend" placeholder="Inserisci il titolo" required>
+                        <input v-model="filmSearch" id="filmSearch" type="text" class="form-control input-group-prepend" placeholder="Inserisci il titolo" required>
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" @click="searchFilms">Cerca</button>
                         </div>
+                    </div>
+                    <div>
+                        <div id="filmSearched" v-bind:class="{'d-none': !filmFound}">
+                            <ul>
+                                <li>Title: @{{ searchedFilm.Title }} (@{{ searchedFilm.Year }})</li>
+                                <li>Director: @{{ searchedFilm.Director }}</li>
+                            </ul>
+                        </div>
+                        <p id="filmNotFound" v-bind:class="{'d-none': !filmNotFound}">@{{ errorMessage }}</p>
                     </div>
                 </div>
             </div>
