@@ -30,18 +30,14 @@
                         </li>
                     </ul>
 
-                    <div>
-                        <h2>Cerca un film</h2>
-                        <div class="form-group">
-                            <label>Cerca il film che vuoi guardare stasera</label>
-                            <input v-model="filmTitle" id="filmTitle" type="text" class="form-control" placeholder="Inserisci il titolo" required>
-                            <button class="btn btn-dark" @click="searchFilms">
-                                Cerca film
-                            </button>
+                    <h2>Cerca il film che vuoi guardare stasera</h2>
+                    <div class="input-group mb-3 form-group">
+                        <input v-model="filmTitle" id="filmTitle" type="text" class="form-control input-group-prepend" placeholder="Inserisci il titolo" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Cerca</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
