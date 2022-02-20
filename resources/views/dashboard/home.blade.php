@@ -62,6 +62,25 @@
                         </div>
                         <p id="filmNotFound" v-bind:class="{'d-none': !filmNotFound}">@{{ errorMessage }}</p>
                     </div>
+                    <h2>Film salvati</h2>
+                    <table class="table table-sm table-bordered table-hover text-center ">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Titolo</th>
+                                <th scope="col">Anno</th>
+                                <th scope="col">Regista</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($films as $film)
+                                <tr>
+                                    <td  class="align-middle">{{ $film->title }}</td>
+                                    <td  class="align-middle">{{ $film->year }}</td>
+                                    <td  class="align-middle">{{ $film->director }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

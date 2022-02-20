@@ -11,7 +11,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('dashboard.home');
+        $user_id = Auth::user()->id;
+        $films = Film::where('user_id', $user_id)->get();
+        $data = [
+            'films' => $films
+        ];
+        return view('dashboard.home', $data);
     }
 
     /**
